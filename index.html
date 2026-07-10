@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Muzzks Ko — Sign In</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- LOGIN STEP -->
+  <div id="step-login" class="step active">
+    <div class="login-card">
+      <div class="brand">
+        <div class="logo">MK</div>
+        <h1>Muzzks Ko</h1>
+        <p>Sign in to access exclusive drops & early releases</p>
+      </div>
+
+      <div class="social-btns">
+        <button class="btn btn-social btn-ms" onclick="handleMicrosoft()">
+          <svg width="18" height="18" viewBox="0 0 21 21" fill="none">
+            <rect x="1" y="1" width="9" height="9" fill="#f25022"/>
+            <rect x="1" y="11" width="9" height="9" fill="#00a4ef"/>
+            <rect x="11" y="1" width="9" height="9" fill="#7fba00"/>
+            <rect x="11" y="11" width="9" height="9" fill="#ffb900"/>
+          </svg>
+          Continue with Microsoft
+        </button>
+
+        <button class="btn btn-social btn-google" onclick="handleGoogle()">
+          <svg width="18" height="18" viewBox="0 0 24 24">
+            <path fill="#EA4335" d="M12 5.04c1.86 0 3.52.64 4.83 1.9l3.62-3.62C17.95 1.19 15.24 0 12 0 7.27 0 3.18 2.69 1.23 6.61l4.2 3.26C6.32 6.78 8.93 5.04 12 5.04z"/>
+            <path fill="#4285F4" d="M23.5 12.23c0-.86-.08-1.68-.22-2.48H12v4.7h6.45c-.28 1.48-1.11 2.73-2.36 3.57l3.82 2.96c2.23-2.06 3.59-5.09 3.59-8.75z"/>
+            <path fill="#FBBC05" d="M5.43 9.87l-4.2-3.26C.63 8.53 0 10.2 0 12s.63 3.47 1.77 4.99l4.16-3.24c-.45-1.34-.45-2.78 0-4.12z"/>
+            <path fill="#34A853" d="M12 24c3.24 0 5.95-1.07 7.93-2.91l-3.82-2.96c-1.07.72-2.44 1.15-4.11 1.15-3.07 0-5.68-1.74-6.99-4.27l-4.16 3.24C3.18 21.31 7.27 24 12 24z"/>
+          </svg>
+          Continue with Google
+        </button>
+      </div>
+
+      <div class="divider">
+        <span>or</span>
+      </div>
+
+      <div class="form-group">
+        <label>Email address</label>
+        <input type="email" id="email-input" placeholder="you@example.com" autocomplete="email">
+        <p class="error-msg hidden" id="email-error">Please enter a valid email address</p>
+      </div>
+
+      <div class="form-group hidden" id="password-group">
+        <label>Password</label>
+        <input type="password" id="password-input" placeholder="Enter your password">
+        <p class="error-msg hidden" id="password-error">Please enter your password</p>
+      </div>
+
+      <button class="btn btn-primary" id="submit-btn" onclick="handleSubmit()">
+        Continue
+      </button>
+
+      <p class="hint">
+        By signing in, you agree to our <a href="#">Terms</a> and <a href="#">Privacy Policy</a>.
+      </p>
+    </div>
+  </div>
+
+  <!-- LOADING STEP -->
+  <div id="step-loading" class="step">
+    <div class="loading-card">
+      <div class="spinner"></div>
+      <p>Signing you in...</p>
+    </div>
+  </div>
+
+  <!-- SUCCESS / REDIRECT STEP -->
+  <div id="step-success" class="step">
+    <div class="success-card">
+      <div class="success-icon">✓</div>
+      <h2>Welcome back!</h2>
+      <p>Redirecting you to Muzzks Ko...</p>
+    </div>
+  </div>
+
+  <!-- TOAST -->
+  <div id="toast" class="toast"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
